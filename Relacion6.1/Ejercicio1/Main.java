@@ -3,9 +3,9 @@ package Ejercicio1;
 public class Main {
 
 	public static void main(String[] args) {
-		int a = 17;
-		int b = 20;
-		int c = 10;
+		int a = 1;
+		int b = 1;
+		int c = 1;
 		
 		try {
 			Triangulo prueba = new Triangulo(a,b,c);
