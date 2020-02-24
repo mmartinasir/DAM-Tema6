@@ -23,7 +23,6 @@ public class Main {
 		
 		while (b != 0) {
 			aux = b % 10;
-			
 		}
 
 		return result;
