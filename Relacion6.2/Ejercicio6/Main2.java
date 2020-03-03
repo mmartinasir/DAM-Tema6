@@ -9,7 +9,7 @@ public class Main2 {
 
 	public static void main(String[] args) throws IOException {
 		File file = new File("./Relacion6.2/Ejercicio6/fichero.txt");
-		File file2 = new File("./Relacion6.2/Ejercicio6/fichero2.txt");
+		File file2 = new File("./Relacion6.2/Ejercicio6/.fichero2.txt");
 		Scanner read = new Scanner(file);
 		Scanner input = new Scanner(System.in);
 		String p1 = "";
@@ -37,17 +37,18 @@ public class Main2 {
 
 				if (linea.charAt(contador) == p1.charAt(0)) {
 					for (int i = 0; i < p1.length(); i++) {
-						if (contador+i < linea.length()) {
+						if (contador + i < linea.length()) {
 							palabra = palabra + linea.charAt(contador + i);
 						}
 					}
 				}
+
 				if (palabra.equals(p1)) {
 					output.print(p2);
 					if (p1.length() > p2.length()) {
-						contador = contador + (p2.length()-p1.length());
+						contador = contador + (p1.length() + (p1.length() - p2.length()-(p1.length()-p2.length())));
 					} else {
-						contador = contador + (p2.length()+(p2.length()-p1.length()));
+						contador = contador + (p1.length() + (p2.length() - p1.length()-(p2.length()-p1.length())));
 					}
 				} else {
 					output.print(linea.charAt(contador));
@@ -60,15 +61,15 @@ public class Main2 {
 		input.close();
 		output.close();
 
-		//Sustituimos el fichero original, cambiando los Scanners
+		// Sustituimos el fichero original, cambiando los Scanners
 		read = new Scanner(file2);
 		output = new PrintWriter(file);
-		
+
 		while (read.hasNext()) {
 			linea = read.nextLine();
 			output.println(linea);
 		}
-		
+
 		file2.delete();
 		read.close();
 		output.close();

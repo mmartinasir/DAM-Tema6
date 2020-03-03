@@ -1,0 +1,3 @@
+fichero de prueba para probar la copia de fichero
+este fichero es de prueba, no borrar el fichero
+fichero de prueba
