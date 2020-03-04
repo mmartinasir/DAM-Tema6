@@ -26,11 +26,14 @@ public class Main2 {
 			
 			for (int i = 0; i < linea.length(); i++) {
 				letra = linea.charAt(i);
+				letra = Character.toLowerCase(letra);
 				if (lista.exists(letra)) {
 					lista.aumentarCantidad(letra);
 				} else {
-					Letra letra2 = new Letra(letra);
-					lista.add(letra2);
+					if (letra != ' ') {
+						Letra letra2 = new Letra(letra);
+						lista.add(letra2);
+					}
 				}
 			}
 		}

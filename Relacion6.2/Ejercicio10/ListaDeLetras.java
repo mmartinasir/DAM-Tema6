@@ -19,6 +19,19 @@ public class ListaDeLetras {
 		this.primero = primero;
 	}
 
+	//ToString
+	@Override
+	public String toString() {
+		String result = "";
+		Letra aux = this.primero;
+		while (aux != null) {
+			result = result+aux;
+			aux = aux.getLetraSiguiente();
+		}
+		return result;
+		
+	}
+
 	// Methods
 	public boolean exists(char c) {
 		if (this.primero == null) {
@@ -26,14 +39,14 @@ public class ListaDeLetras {
 		}
 		
 		Letra aux = this.primero;
-		while (aux.getLetra() != c) {
+		while (aux != null && aux.getLetra() != c) {
 			aux = aux.getLetraSiguiente();
 		}
 
-		if (aux.getLetra() == c) {
-			return true;
-		} else {
+		if (aux == null) {
 			return false;
+		} else {
+			return true;
 		}
 	}
 
@@ -50,7 +63,7 @@ public class ListaDeLetras {
 		if (this.primero == null) {
 			this.primero = l;
 		} else {
-			Letra aux = l;
+			Letra aux = primero;
 			while (aux.getLetraSiguiente() != null) {
 				aux = aux.getLetraSiguiente();
 			}

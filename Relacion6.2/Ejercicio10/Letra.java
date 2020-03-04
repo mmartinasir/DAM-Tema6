@@ -10,7 +10,7 @@ public class Letra {
 	//Builders
 	public Letra(char letra) {
 		this.letra = letra;
-		this.cantidad = 0;
+		this.cantidad = 1;
 	}
 
 	//Getters and Setters
@@ -42,8 +42,8 @@ public class Letra {
 	public String toString() {
 		String result = "";
 		result = result+"Letra: "+this.letra;
+		result = result+" Cantidad: "+this.cantidad;
 		result = result+"\n";
-		result = result+"Cantidad: "+this.cantidad;
 		return result;
 	}
 	
